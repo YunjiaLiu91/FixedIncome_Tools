@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+outputs/*
+!outputs/.gitkeep
+!outputs/demo/
+outputs/demo/*
+!outputs/demo/report.html
+!outputs/demo/summary.json
+!outputs/demo/data_quality.json
+!outputs/demo/experiment_manifest.json

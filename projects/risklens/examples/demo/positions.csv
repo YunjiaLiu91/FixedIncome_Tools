@@ -1,0 +1,7 @@
+symbol,sector,asset_class,market_value,adv_cny,duration,risk_level,price_date
+SIM_TECH_A,Technology,equity,3600000.0,6000000.0,0.0,4,2026-09-28
+SIM_TECH_B,Technology,equity,2000000.0,4000000.0,0.0,4,2026-09-28
+SIM_BANK,Financials,equity,1400000.0000000002,18000000.0,0.0,3,2026-09-28
+SIM_BOND,Fixed income,bond,1800000.0,8000000.0,4.5,2,2026-09-28
+SIM_GOLD,Commodity,gold,700000.0000000001,10000000.0,0.0,3,2026-09-28
+CASH,Cash,cash,500000.0,1000000000000.0,0.0,1,2026-09-28

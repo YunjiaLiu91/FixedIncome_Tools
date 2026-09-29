@@ -1,0 +1,1001 @@
+{
+  "project": "RiskLens",
+  "version": "0.1.0",
+  "as_of": "2026-09-28",
+  "policy_version": "demo-policy-2026-09-v1",
+  "data_source": "synthetic",
+  "seed": 42,
+  "input_hashes": {
+    "returns.csv": "090a839a2585fe7ea2ca84191f4eef6a80791a76a70dc3386cd208430c894842",
+    "positions.csv": "2db291aed8616cf92876ac47bde3cd10d3458cf55d49f53741c48071edc98081",
+    "orders.csv": "29569ebd298fe46024c7eea9dc6b5cf62c1c121886a0faffd0260972b0e042d1",
+    "policy.json": "726adfccdd7e08ad078a2ddf8ad40c65b591a5f96b7a660142c5c09b98ce1cac"
+  },
+  "policy": {
+    "version": "demo-policy-2026-09-v1",
+    "scope": "Fictional internal policy for a single long-only CNY portfolio; not statutory limits",
+    "as_of": "2026-09-28",
+    "confidence": 0.975,
+    "lookback": 252,
+    "max_asset_weight": 0.3,
+    "max_sector_weight": 0.45,
+    "max_var_fraction": 0.025,
+    "max_liquidation_days": 5.0,
+    "adv_participation": 0.1,
+    "max_order_adv_fraction": 0.1,
+    "max_price_age_days": 3,
+    "restricted_symbols": [
+      "SIM_TECH_B"
+    ],
+    "scenarios": {
+      "Equity selloff": {
+        "equity_shock": -0.2,
+        "yield_bp": 100,
+        "gold_shock": 0.05
+      },
+      "Rates +200bp": {
+        "equity_shock": -0.05,
+        "yield_bp": 200,
+        "gold_shock": -0.03
+      },
+      "Liquidity squeeze": {
+        "equity_shock": -0.3,
+        "yield_bp": 150,
+        "gold_shock": -0.1
+      }
+    }
+  },
+  "risk": {
+    "nav_cny": 10000000.0,
+    "confidence": 0.975,
+    "lookback": 252,
+    "var_fraction": 0.017631808880282037,
+    "es_fraction": 0.022536812790582252,
+    "var_cny": 176318.08880282036,
+    "es_cny": 225368.12790582253,
+    "annualized_volatility": 0.12504250010943868,
+    "reconstructed_max_drawdown": -0.22665185418396916,
+    "backtest": {
+      "observations": 504,
+      "breaches": 12,
+      "breach_rate": 0.023809523809523808,
+      "expected_rate": 0.025000000000000022,
+      "kupiec_lr": 0.02976836267933436,
+      "kupiec_pvalue": 0.8630168648481303,
+      "note": "Asymptotic chi-square(1) coverage test; does not test independence or validate the model"
+    },
+    "assets": [
+      {
+        "symbol": "SIM_TECH_A",
+        "sector": "Technology",
+        "asset_class": "equity",
+        "market_value": 3600000.0,
+        "weight": 0.36,
+        "duration": 0.0,
+        "volatility_contribution": 0.07243452850623378,
+        "liquidation_days": 6.0
+      },
+      {
+        "symbol": "SIM_TECH_B",
+        "sector": "Technology",
+        "asset_class": "equity",
+        "market_value": 2000000.0,
+        "weight": 0.2,
+        "duration": 0.0,
+        "volatility_contribution": 0.036786932822029224,
+        "liquidation_days": 5.0
+      },
+      {
+        "symbol": "SIM_BANK",
+        "sector": "Financials",
+        "asset_class": "equity",
+        "market_value": 1400000.0000000002,
+        "weight": 0.14,
+        "duration": 0.0,
+        "volatility_contribution": 0.017042006428430716,
+        "liquidation_days": 0.7777777777777779
+      },
+      {
+        "symbol": "SIM_BOND",
+        "sector": "Fixed income",
+        "asset_class": "bond",
+        "market_value": 1800000.0,
+        "weight": 0.18,
+        "duration": 4.5,
+        "volatility_contribution": 5.117306614699742e-05,
+        "liquidation_days": 2.25
+      },
+      {
+        "symbol": "SIM_GOLD",
+        "sector": "Commodity",
+        "asset_class": "gold",
+        "market_value": 700000.0000000001,
+        "weight": 0.07,
+        "duration": 0.0,
+        "volatility_contribution": -0.0012721407134020002,
+        "liquidation_days": 0.7000000000000001
+      },
+      {
+        "symbol": "CASH",
+        "sector": "Cash",
+        "asset_class": "cash",
+        "market_value": 500000.0,
+        "weight": 0.05,
+        "duration": 0.0,
+        "volatility_contribution": 0.0,
+        "liquidation_days": 0.0
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Equity selloff",
+        "pnl_cny": -1446000.0,
+        "return_fraction": -0.1446,
+        "details": [
+          {
+            "symbol": "SIM_TECH_A",
+            "return_fraction": -0.2,
+            "pnl_cny": -720000.0
+          },
+          {
+            "symbol": "SIM_TECH_B",
+            "return_fraction": -0.2,
+            "pnl_cny": -400000.0
+          },
+          {
+            "symbol": "SIM_BANK",
+            "return_fraction": -0.2,
+            "pnl_cny": -280000.00000000006
+          },
+          {
+            "symbol": "SIM_BOND",
+            "return_fraction": -0.045,
+            "pnl_cny": -81000.0
+          },
+          {
+            "symbol": "SIM_GOLD",
+            "return_fraction": 0.05,
+            "pnl_cny": 35000.00000000001
+          },
+          {
+            "symbol": "CASH",
+            "return_fraction": 0.0,
+            "pnl_cny": 0.0
+          }
+        ],
+        "shocks": {
+          "equity_shock": -0.2,
+          "yield_bp": 100,
+          "gold_shock": 0.05
+        }
+      },
+      {
+        "name": "Rates +200bp",
+        "pnl_cny": -533000.0,
+        "return_fraction": -0.0533,
+        "details": [
+          {
+            "symbol": "SIM_TECH_A",
+            "return_fraction": -0.05,
+            "pnl_cny": -180000.0
+          },
+          {
+            "symbol": "SIM_TECH_B",
+            "return_fraction": -0.05,
+            "pnl_cny": -100000.0
+          },
+          {
+            "symbol": "SIM_BANK",
+            "return_fraction": -0.05,
+            "pnl_cny": -70000.00000000001
+          },
+          {
+            "symbol": "SIM_BOND",
+            "return_fraction": -0.09,
+            "pnl_cny": -162000.0
+          },
+          {
+            "symbol": "SIM_GOLD",
+            "return_fraction": -0.03,
+            "pnl_cny": -21000.000000000004
+          },
+          {
+            "symbol": "CASH",
+            "return_fraction": 0.0,
+            "pnl_cny": 0.0
+          }
+        ],
+        "shocks": {
+          "equity_shock": -0.05,
+          "yield_bp": 200,
+          "gold_shock": -0.03
+        }
+      },
+      {
+        "name": "Liquidity squeeze",
+        "pnl_cny": -2291500.0,
+        "return_fraction": -0.22915,
+        "details": [
+          {
+            "symbol": "SIM_TECH_A",
+            "return_fraction": -0.3,
+            "pnl_cny": -1080000.0
+          },
+          {
+            "symbol": "SIM_TECH_B",
+            "return_fraction": -0.3,
+            "pnl_cny": -600000.0
+          },
+          {
+            "symbol": "SIM_BANK",
+            "return_fraction": -0.3,
+            "pnl_cny": -420000.00000000006
+          },
+          {
+            "symbol": "SIM_BOND",
+            "return_fraction": -0.0675,
+            "pnl_cny": -121500.00000000001
+          },
+          {
+            "symbol": "SIM_GOLD",
+            "return_fraction": -0.1,
+            "pnl_cny": -70000.00000000001
+          },
+          {
+            "symbol": "CASH",
+            "return_fraction": 0.0,
+            "pnl_cny": 0.0
+          }
+        ],
+        "shocks": {
+          "equity_shock": -0.3,
+          "yield_bp": 150,
+          "gold_shock": -0.1
+        }
+      }
+    ],
+    "return_basis": "Fixed current weights rebalanced daily on simulated returns; not historical holdings or strategy performance"
+  },
+  "checks": [
+    {
+      "evidence_id": "df2051a550cefc8e",
+      "title": "单一资产集中度",
+      "status": "FAIL",
+      "explanation": "非现金资产当前权重不超过内部上限",
+      "rule_id": "P01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_TECH_A",
+      "actual": 0.36,
+      "threshold": 0.3,
+      "passed": false,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "98f974977ba5aebc",
+      "title": "持仓流动性",
+      "status": "FAIL",
+      "explanation": "当前市值 / (ADV × 固定参与率)，不包含市场冲击",
+      "rule_id": "P04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_TECH_A",
+      "actual": 6.0,
+      "threshold": 5.0,
+      "passed": false,
+      "unit": "days"
+    },
+    {
+      "evidence_id": "497fde005514d478",
+      "title": "估值时效",
+      "status": "PASS",
+      "explanation": "估值日期超过阈值时进入复核，不自动替换价格",
+      "rule_id": "P05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_TECH_A",
+      "actual": 0,
+      "threshold": 3,
+      "passed": true,
+      "unit": "calendar_days"
+    },
+    {
+      "evidence_id": "8194666285e273a1",
+      "title": "单一资产集中度",
+      "status": "PASS",
+      "explanation": "非现金资产当前权重不超过内部上限",
+      "rule_id": "P01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_TECH_B",
+      "actual": 0.2,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "58b6e9e19f22c76d",
+      "title": "持仓流动性",
+      "status": "PASS",
+      "explanation": "当前市值 / (ADV × 固定参与率)，不包含市场冲击",
+      "rule_id": "P04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_TECH_B",
+      "actual": 5.0,
+      "threshold": 5.0,
+      "passed": true,
+      "unit": "days"
+    },
+    {
+      "evidence_id": "a96125f0e68aec67",
+      "title": "估值时效",
+      "status": "PASS",
+      "explanation": "估值日期超过阈值时进入复核，不自动替换价格",
+      "rule_id": "P05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_TECH_B",
+      "actual": 0,
+      "threshold": 3,
+      "passed": true,
+      "unit": "calendar_days"
+    },
+    {
+      "evidence_id": "e88edd8b0ba6ed88",
+      "title": "单一资产集中度",
+      "status": "PASS",
+      "explanation": "非现金资产当前权重不超过内部上限",
+      "rule_id": "P01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_BANK",
+      "actual": 0.14,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "58a33323af9d55aa",
+      "title": "持仓流动性",
+      "status": "PASS",
+      "explanation": "当前市值 / (ADV × 固定参与率)，不包含市场冲击",
+      "rule_id": "P04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_BANK",
+      "actual": 0.7777777777777779,
+      "threshold": 5.0,
+      "passed": true,
+      "unit": "days"
+    },
+    {
+      "evidence_id": "1296fac6343c92e0",
+      "title": "估值时效",
+      "status": "PASS",
+      "explanation": "估值日期超过阈值时进入复核，不自动替换价格",
+      "rule_id": "P05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_BANK",
+      "actual": 0,
+      "threshold": 3,
+      "passed": true,
+      "unit": "calendar_days"
+    },
+    {
+      "evidence_id": "93ede916b9e54688",
+      "title": "单一资产集中度",
+      "status": "PASS",
+      "explanation": "非现金资产当前权重不超过内部上限",
+      "rule_id": "P01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_BOND",
+      "actual": 0.18,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "7cb642b5a3aa0d39",
+      "title": "持仓流动性",
+      "status": "PASS",
+      "explanation": "当前市值 / (ADV × 固定参与率)，不包含市场冲击",
+      "rule_id": "P04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_BOND",
+      "actual": 2.25,
+      "threshold": 5.0,
+      "passed": true,
+      "unit": "days"
+    },
+    {
+      "evidence_id": "4badd9889c131c0f",
+      "title": "估值时效",
+      "status": "PASS",
+      "explanation": "估值日期超过阈值时进入复核，不自动替换价格",
+      "rule_id": "P05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_BOND",
+      "actual": 0,
+      "threshold": 3,
+      "passed": true,
+      "unit": "calendar_days"
+    },
+    {
+      "evidence_id": "45e55ddbe8ca7c5e",
+      "title": "单一资产集中度",
+      "status": "PASS",
+      "explanation": "非现金资产当前权重不超过内部上限",
+      "rule_id": "P01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_GOLD",
+      "actual": 0.07,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "6ae8b81e62bbb48e",
+      "title": "持仓流动性",
+      "status": "PASS",
+      "explanation": "当前市值 / (ADV × 固定参与率)，不包含市场冲击",
+      "rule_id": "P04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_GOLD",
+      "actual": 0.7000000000000001,
+      "threshold": 5.0,
+      "passed": true,
+      "unit": "days"
+    },
+    {
+      "evidence_id": "f738abf28c43131c",
+      "title": "估值时效",
+      "status": "PASS",
+      "explanation": "估值日期超过阈值时进入复核，不自动替换价格",
+      "rule_id": "P05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "SIM_GOLD",
+      "actual": 0,
+      "threshold": 3,
+      "passed": true,
+      "unit": "calendar_days"
+    },
+    {
+      "evidence_id": "8af48622ed485e9e",
+      "title": "估值时效",
+      "status": "PASS",
+      "explanation": "估值日期超过阈值时进入复核，不自动替换价格",
+      "rule_id": "P05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "CASH",
+      "actual": 0,
+      "threshold": 3,
+      "passed": true,
+      "unit": "calendar_days"
+    },
+    {
+      "evidence_id": "cacdf880fa88d64e",
+      "title": "行业集中度",
+      "status": "PASS",
+      "explanation": "非现金行业市值 / 含现金 NAV",
+      "rule_id": "P02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "Commodity",
+      "actual": 0.07,
+      "threshold": 0.45,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "5671d22497902620",
+      "title": "行业集中度",
+      "status": "PASS",
+      "explanation": "非现金行业市值 / 含现金 NAV",
+      "rule_id": "P02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "Financials",
+      "actual": 0.14,
+      "threshold": 0.45,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "1418958357244419",
+      "title": "行业集中度",
+      "status": "PASS",
+      "explanation": "非现金行业市值 / 含现金 NAV",
+      "rule_id": "P02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "Fixed income",
+      "actual": 0.18,
+      "threshold": 0.45,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "94e3785a6f469e07",
+      "title": "行业集中度",
+      "status": "FAIL",
+      "explanation": "非现金行业市值 / 含现金 NAV",
+      "rule_id": "P02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "Technology",
+      "actual": 0.56,
+      "threshold": 0.45,
+      "passed": false,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "618569cfc5763ac0",
+      "title": "单日 VaR 预算",
+      "status": "PASS",
+      "explanation": "指定窗口与置信度下的一日历史模拟 VaR",
+      "rule_id": "P03",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "PORTFOLIO",
+      "actual": 0.017631808880282037,
+      "threshold": 0.025,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "0a9a6b9fbf355f92",
+      "title": "限制交易名单",
+      "status": "FAIL",
+      "explanation": "演示名单同时限制买入和卖出，真实处置流程需另行定义",
+      "rule_id": "O01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-001",
+      "actual": true,
+      "threshold": false,
+      "passed": false,
+      "unit": "boolean"
+    },
+    {
+      "evidence_id": "942377c98c27ce43",
+      "title": "KYC 有效期",
+      "status": "PASS",
+      "explanation": "KYC 到期日含当日有效",
+      "rule_id": "O02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-001",
+      "actual": "2027-09-28",
+      "threshold": "2026-09-28",
+      "passed": true,
+      "unit": "date"
+    },
+    {
+      "evidence_id": "acadca3ba5364467",
+      "title": "产品与客户风险等级",
+      "status": "PASS",
+      "explanation": "买入时产品等级不高于客户等级；卖出减仓不受该规则阻拦",
+      "rule_id": "O03",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-001",
+      "actual": 4,
+      "threshold": 4,
+      "passed": true,
+      "unit": "level"
+    },
+    {
+      "evidence_id": "83839366af43146b",
+      "title": "订单 ADV 参与率",
+      "status": "PASS",
+      "explanation": "单笔名义金额 / ADV；多订单累积参与率尚未实现",
+      "rule_id": "O04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-001",
+      "actual": 0.05,
+      "threshold": 0.1,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "5e4e7b2607192a20",
+      "title": "可用现金或持仓",
+      "status": "PASS",
+      "explanation": "每笔订单独立对比快照现金或持仓；尚未扣除手续费与其他挂单冻结",
+      "rule_id": "O05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-001",
+      "actual": 200000.0,
+      "threshold": 500000.0,
+      "passed": true,
+      "unit": "CNY"
+    },
+    {
+      "evidence_id": "a6367fa0b9b5efda",
+      "title": "买入后单一资产集中度",
+      "status": "PASS",
+      "explanation": "买入后权重不超过上限；卖出以可用持仓规则约束",
+      "rule_id": "O06",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-001",
+      "actual": 0.22,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "b7023f9a26192d0f",
+      "title": "限制交易名单",
+      "status": "PASS",
+      "explanation": "演示名单同时限制买入和卖出，真实处置流程需另行定义",
+      "rule_id": "O01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-002",
+      "actual": false,
+      "threshold": false,
+      "passed": true,
+      "unit": "boolean"
+    },
+    {
+      "evidence_id": "17a9e626223ec4f4",
+      "title": "KYC 有效期",
+      "status": "FAIL",
+      "explanation": "KYC 到期日含当日有效",
+      "rule_id": "O02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-002",
+      "actual": "2026-08-01",
+      "threshold": "2026-09-28",
+      "passed": false,
+      "unit": "date"
+    },
+    {
+      "evidence_id": "92588dfdc15c98bb",
+      "title": "产品与客户风险等级",
+      "status": "FAIL",
+      "explanation": "买入时产品等级不高于客户等级；卖出减仓不受该规则阻拦",
+      "rule_id": "O03",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-002",
+      "actual": 4,
+      "threshold": 2,
+      "passed": false,
+      "unit": "level"
+    },
+    {
+      "evidence_id": "4eb5268ff6ce8e5f",
+      "title": "订单 ADV 参与率",
+      "status": "FAIL",
+      "explanation": "单笔名义金额 / ADV；多订单累积参与率尚未实现",
+      "rule_id": "O04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-002",
+      "actual": 0.13333333333333333,
+      "threshold": 0.1,
+      "passed": false,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "f6673091d7de5381",
+      "title": "可用现金或持仓",
+      "status": "FAIL",
+      "explanation": "每笔订单独立对比快照现金或持仓；尚未扣除手续费与其他挂单冻结",
+      "rule_id": "O05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-002",
+      "actual": 800000.0,
+      "threshold": 500000.0,
+      "passed": false,
+      "unit": "CNY"
+    },
+    {
+      "evidence_id": "21883ab923667991",
+      "title": "买入后单一资产集中度",
+      "status": "FAIL",
+      "explanation": "买入后权重不超过上限；卖出以可用持仓规则约束",
+      "rule_id": "O06",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-002",
+      "actual": 0.44,
+      "threshold": 0.3,
+      "passed": false,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "5bf23d783b2bce8e",
+      "title": "限制交易名单",
+      "status": "PASS",
+      "explanation": "演示名单同时限制买入和卖出，真实处置流程需另行定义",
+      "rule_id": "O01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-003",
+      "actual": false,
+      "threshold": false,
+      "passed": true,
+      "unit": "boolean"
+    },
+    {
+      "evidence_id": "57c26a5954b21bb7",
+      "title": "KYC 有效期",
+      "status": "PASS",
+      "explanation": "KYC 到期日含当日有效",
+      "rule_id": "O02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-003",
+      "actual": "2027-09-28",
+      "threshold": "2026-09-28",
+      "passed": true,
+      "unit": "date"
+    },
+    {
+      "evidence_id": "5d104b01576004e2",
+      "title": "产品与客户风险等级",
+      "status": "PASS",
+      "explanation": "买入时产品等级不高于客户等级；卖出减仓不受该规则阻拦",
+      "rule_id": "O03",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-003",
+      "actual": 3,
+      "threshold": 4,
+      "passed": true,
+      "unit": "level"
+    },
+    {
+      "evidence_id": "33f4004facec6f37",
+      "title": "订单 ADV 参与率",
+      "status": "PASS",
+      "explanation": "单笔名义金额 / ADV；多订单累积参与率尚未实现",
+      "rule_id": "O04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-003",
+      "actual": 0.005555555555555556,
+      "threshold": 0.1,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "9dc519a27ef17c75",
+      "title": "可用现金或持仓",
+      "status": "PASS",
+      "explanation": "每笔订单独立对比快照现金或持仓；尚未扣除手续费与其他挂单冻结",
+      "rule_id": "O05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-003",
+      "actual": 100000.0,
+      "threshold": 1400000.0000000002,
+      "passed": true,
+      "unit": "CNY"
+    },
+    {
+      "evidence_id": "68d6a3dec45704e3",
+      "title": "买入后单一资产集中度",
+      "status": "PASS",
+      "explanation": "买入后权重不超过上限；卖出以可用持仓规则约束",
+      "rule_id": "O06",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-003",
+      "actual": 0.13000000000000003,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "298590cae1d589c5",
+      "title": "限制交易名单",
+      "status": "PASS",
+      "explanation": "演示名单同时限制买入和卖出，真实处置流程需另行定义",
+      "rule_id": "O01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-004",
+      "actual": false,
+      "threshold": false,
+      "passed": true,
+      "unit": "boolean"
+    },
+    {
+      "evidence_id": "17e82b5d9bf7557c",
+      "title": "KYC 有效期",
+      "status": "PASS",
+      "explanation": "KYC 到期日含当日有效",
+      "rule_id": "O02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-004",
+      "actual": "2027-09-28",
+      "threshold": "2026-09-28",
+      "passed": true,
+      "unit": "date"
+    },
+    {
+      "evidence_id": "d54f756763ab5125",
+      "title": "产品与客户风险等级",
+      "status": "PASS",
+      "explanation": "买入时产品等级不高于客户等级；卖出减仓不受该规则阻拦",
+      "rule_id": "O03",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-004",
+      "actual": 3,
+      "threshold": 4,
+      "passed": true,
+      "unit": "level"
+    },
+    {
+      "evidence_id": "e07145d96d5f7c16",
+      "title": "订单 ADV 参与率",
+      "status": "PASS",
+      "explanation": "单笔名义金额 / ADV；多订单累积参与率尚未实现",
+      "rule_id": "O04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-004",
+      "actual": 0.01,
+      "threshold": 0.1,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "38dc5a58a41eea0f",
+      "title": "可用现金或持仓",
+      "status": "PASS",
+      "explanation": "每笔订单独立对比快照现金或持仓；尚未扣除手续费与其他挂单冻结",
+      "rule_id": "O05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-004",
+      "actual": 100000.0,
+      "threshold": 500000.0,
+      "passed": true,
+      "unit": "CNY"
+    },
+    {
+      "evidence_id": "29e0f6a1a308b3df",
+      "title": "买入后单一资产集中度",
+      "status": "PASS",
+      "explanation": "买入后权重不超过上限；卖出以可用持仓规则约束",
+      "rule_id": "O06",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-004",
+      "actual": 0.08000000000000002,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "df57f4bd4d72a6da",
+      "title": "限制交易名单",
+      "status": "PASS",
+      "explanation": "演示名单同时限制买入和卖出，真实处置流程需另行定义",
+      "rule_id": "O01",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-005",
+      "actual": false,
+      "threshold": false,
+      "passed": true,
+      "unit": "boolean"
+    },
+    {
+      "evidence_id": "d723a3dc8df5e639",
+      "title": "KYC 有效期",
+      "status": "PASS",
+      "explanation": "KYC 到期日含当日有效",
+      "rule_id": "O02",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-005",
+      "actual": "2027-09-28",
+      "threshold": "2026-09-28",
+      "passed": true,
+      "unit": "date"
+    },
+    {
+      "evidence_id": "d8a2f70d1fb17ff7",
+      "title": "产品与客户风险等级",
+      "status": "PASS",
+      "explanation": "买入时产品等级不高于客户等级；卖出减仓不受该规则阻拦",
+      "rule_id": "O03",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-005",
+      "actual": 3,
+      "threshold": 4,
+      "passed": true,
+      "unit": "level"
+    },
+    {
+      "evidence_id": "9a30fba21ec9f8f2",
+      "title": "订单 ADV 参与率",
+      "status": "PASS",
+      "explanation": "单笔名义金额 / ADV；多订单累积参与率尚未实现",
+      "rule_id": "O04",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-005",
+      "actual": 0.09,
+      "threshold": 0.1,
+      "passed": true,
+      "unit": "fraction"
+    },
+    {
+      "evidence_id": "6bd420a1cbcc4b4c",
+      "title": "可用现金或持仓",
+      "status": "FAIL",
+      "explanation": "每笔订单独立对比快照现金或持仓；尚未扣除手续费与其他挂单冻结",
+      "rule_id": "O05",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-005",
+      "actual": 900000.0,
+      "threshold": 700000.0000000001,
+      "passed": false,
+      "unit": "CNY"
+    },
+    {
+      "evidence_id": "70ece2ad009da7de",
+      "title": "买入后单一资产集中度",
+      "status": "PASS",
+      "explanation": "买入后权重不超过上限；卖出以可用持仓规则约束",
+      "rule_id": "O06",
+      "policy_version": "demo-policy-2026-09-v1",
+      "entity": "ORD-005",
+      "actual": -0.01999999999999999,
+      "threshold": 0.3,
+      "passed": true,
+      "unit": "fraction"
+    }
+  ],
+  "order_decisions": [
+    {
+      "order_id": "ORD-001",
+      "symbol": "SIM_TECH_B",
+      "side": "BUY",
+      "status": "BLOCK",
+      "failed_rules": [
+        "O01"
+      ],
+      "evidence_ids": [
+        "0a9a6b9fbf355f92"
+      ]
+    },
+    {
+      "order_id": "ORD-002",
+      "symbol": "SIM_TECH_A",
+      "side": "BUY",
+      "status": "BLOCK",
+      "failed_rules": [
+        "O02",
+        "O03",
+        "O04",
+        "O05",
+        "O06"
+      ],
+      "evidence_ids": [
+        "17a9e626223ec4f4",
+        "92588dfdc15c98bb",
+        "4eb5268ff6ce8e5f",
+        "f6673091d7de5381",
+        "21883ab923667991"
+      ]
+    },
+    {
+      "order_id": "ORD-003",
+      "symbol": "SIM_BANK",
+      "side": "SELL",
+      "status": "PASS_DEMO_CHECKS",
+      "failed_rules": [],
+      "evidence_ids": []
+    },
+    {
+      "order_id": "ORD-004",
+      "symbol": "SIM_GOLD",
+      "side": "BUY",
+      "status": "PASS_DEMO_CHECKS",
+      "failed_rules": [],
+      "evidence_ids": []
+    },
+    {
+      "order_id": "ORD-005",
+      "symbol": "SIM_GOLD",
+      "side": "SELL",
+      "status": "BLOCK",
+      "failed_rules": [
+        "O05"
+      ],
+      "evidence_ids": [
+        "6bd420a1cbcc4b4c"
+      ]
+    }
+  ],
+  "sample": {
+    "days": 756,
+    "assets": 6,
+    "orders": 5
+  },
+  "counts": {
+    "checks": 51,
+    "failures": 10,
+    "blocked_orders": 3
+  },
+  "notes": [
+    "Fictional internal policy; no legal or regulatory certification",
+    "Each order is checked independently against the same snapshot, not cumulatively",
+    "AI is optional offline commentary; numerical checks do not verify prose semantics"
+  ]
+}

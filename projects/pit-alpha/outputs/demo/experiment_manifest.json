@@ -1,0 +1,31 @@
+{
+  "experiment_id": "demo_quality_value_growth_v1",
+  "data": {
+    "source": "synthetic",
+    "seed": 42,
+    "frequency": "monthly",
+    "return_column": "forward_return"
+  },
+  "point_in_time_rule": "announce_date <= signal_date; keep latest visible statement",
+  "factor_definition": {
+    "quality": "mean(z(roe_ttm), z(cfo_to_assets), -z(accruals_to_assets))",
+    "value": "mean(-z(log(pe_ttm)), -z(log(pb)))",
+    "growth": "z(revenue_growth)",
+    "composite": "0.50 * quality + 0.30 * value + 0.20 * growth"
+  },
+  "preprocessing": [
+    "cross-sectional 5-MAD winsorization",
+    "cross-sectional z-score",
+    "OLS neutralization against industry dummies and log market cap"
+  ],
+  "validation": {
+    "split_date": "2022-01-01",
+    "quantiles": 5,
+    "decay_horizons_months": [
+      1,
+      3,
+      6
+    ],
+    "capacity_participation_rate": 0.1
+  }
+}

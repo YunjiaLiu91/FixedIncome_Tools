@@ -1,0 +1,36 @@
+{
+  "fundamentals": {
+    "rows": 7560,
+    "stocks": 180,
+    "duplicate_versions": 0,
+    "announcement_before_report_period": 0,
+    "missing_rate": {
+      "roe_ttm": 0.0,
+      "cfo_to_assets": 0.0,
+      "accruals_to_assets": 0.0,
+      "revenue_growth": 0.0,
+      "pe_ttm": 0.0,
+      "pb": 0.0
+    }
+  },
+  "market": {
+    "rows": 21600,
+    "stocks": 180,
+    "duplicate_symbol_dates": 0,
+    "missing_rate": {
+      "market_cap": 0.0,
+      "adv20": 0.0,
+      "forward_return": 0.0
+    }
+  },
+  "pit_alignment": {
+    "retained_rows": 21600,
+    "coverage_rate": 1.0,
+    "future_announcement_rows": 0,
+    "cross_section_min": 180,
+    "cross_section_median": 180.0,
+    "cross_section_max": 180,
+    "statement_age_days_median": 92.0,
+    "statement_age_days_p95": 152.0
+  }
+}

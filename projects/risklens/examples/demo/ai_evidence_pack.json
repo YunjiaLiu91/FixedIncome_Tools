@@ -1,0 +1,368 @@
+{
+  "data_source": "synthetic",
+  "mode": "offline, no external model called",
+  "facts": {
+    "METRIC:VAR_CNY": {
+      "value": 176318.08880282036,
+      "unit": "CNY"
+    },
+    "METRIC:ES_CNY": {
+      "value": 225368.12790582253,
+      "unit": "CNY"
+    },
+    "METRIC:NAV_CNY": {
+      "value": 10000000.0,
+      "unit": "CNY"
+    },
+    "STRESS:Equity selloff": {
+      "value": -1446000.0,
+      "unit": "CNY"
+    },
+    "STRESS:Rates +200bp": {
+      "value": -533000.0,
+      "unit": "CNY"
+    },
+    "STRESS:Liquidity squeeze": {
+      "value": -2291500.0,
+      "unit": "CNY"
+    },
+    "CHECK:df2051a550cefc8e": {
+      "value": 0.36,
+      "unit": "fraction",
+      "rule_id": "P01",
+      "entity": "SIM_TECH_A",
+      "status": "FAIL",
+      "threshold": 0.3
+    },
+    "CHECK:98f974977ba5aebc": {
+      "value": 6.0,
+      "unit": "days",
+      "rule_id": "P04",
+      "entity": "SIM_TECH_A",
+      "status": "FAIL",
+      "threshold": 5.0
+    },
+    "CHECK:497fde005514d478": {
+      "value": 0,
+      "unit": "calendar_days",
+      "rule_id": "P05",
+      "entity": "SIM_TECH_A",
+      "status": "PASS",
+      "threshold": 3
+    },
+    "CHECK:8194666285e273a1": {
+      "value": 0.2,
+      "unit": "fraction",
+      "rule_id": "P01",
+      "entity": "SIM_TECH_B",
+      "status": "PASS",
+      "threshold": 0.3
+    },
+    "CHECK:58b6e9e19f22c76d": {
+      "value": 5.0,
+      "unit": "days",
+      "rule_id": "P04",
+      "entity": "SIM_TECH_B",
+      "status": "PASS",
+      "threshold": 5.0
+    },
+    "CHECK:a96125f0e68aec67": {
+      "value": 0,
+      "unit": "calendar_days",
+      "rule_id": "P05",
+      "entity": "SIM_TECH_B",
+      "status": "PASS",
+      "threshold": 3
+    },
+    "CHECK:e88edd8b0ba6ed88": {
+      "value": 0.14,
+      "unit": "fraction",
+      "rule_id": "P01",
+      "entity": "SIM_BANK",
+      "status": "PASS",
+      "threshold": 0.3
+    },
+    "CHECK:58a33323af9d55aa": {
+      "value": 0.7777777777777779,
+      "unit": "days",
+      "rule_id": "P04",
+      "entity": "SIM_BANK",
+      "status": "PASS",
+      "threshold": 5.0
+    },
+    "CHECK:1296fac6343c92e0": {
+      "value": 0,
+      "unit": "calendar_days",
+      "rule_id": "P05",
+      "entity": "SIM_BANK",
+      "status": "PASS",
+      "threshold": 3
+    },
+    "CHECK:93ede916b9e54688": {
+      "value": 0.18,
+      "unit": "fraction",
+      "rule_id": "P01",
+      "entity": "SIM_BOND",
+      "status": "PASS",
+      "threshold": 0.3
+    },
+    "CHECK:7cb642b5a3aa0d39": {
+      "value": 2.25,
+      "unit": "days",
+      "rule_id": "P04",
+      "entity": "SIM_BOND",
+      "status": "PASS",
+      "threshold": 5.0
+    },
+    "CHECK:4badd9889c131c0f": {
+      "value": 0,
+      "unit": "calendar_days",
+      "rule_id": "P05",
+      "entity": "SIM_BOND",
+      "status": "PASS",
+      "threshold": 3
+    },
+    "CHECK:45e55ddbe8ca7c5e": {
+      "value": 0.07,
+      "unit": "fraction",
+      "rule_id": "P01",
+      "entity": "SIM_GOLD",
+      "status": "PASS",
+      "threshold": 0.3
+    },
+    "CHECK:6ae8b81e62bbb48e": {
+      "value": 0.7000000000000001,
+      "unit": "days",
+      "rule_id": "P04",
+      "entity": "SIM_GOLD",
+      "status": "PASS",
+      "threshold": 5.0
+    },
+    "CHECK:f738abf28c43131c": {
+      "value": 0,
+      "unit": "calendar_days",
+      "rule_id": "P05",
+      "entity": "SIM_GOLD",
+      "status": "PASS",
+      "threshold": 3
+    },
+    "CHECK:8af48622ed485e9e": {
+      "value": 0,
+      "unit": "calendar_days",
+      "rule_id": "P05",
+      "entity": "CASH",
+      "status": "PASS",
+      "threshold": 3
+    },
+    "CHECK:cacdf880fa88d64e": {
+      "value": 0.07,
+      "unit": "fraction",
+      "rule_id": "P02",
+      "entity": "Commodity",
+      "status": "PASS",
+      "threshold": 0.45
+    },
+    "CHECK:5671d22497902620": {
+      "value": 0.14,
+      "unit": "fraction",
+      "rule_id": "P02",
+      "entity": "Financials",
+      "status": "PASS",
+      "threshold": 0.45
+    },
+    "CHECK:1418958357244419": {
+      "value": 0.18,
+      "unit": "fraction",
+      "rule_id": "P02",
+      "entity": "Fixed income",
+      "status": "PASS",
+      "threshold": 0.45
+    },
+    "CHECK:94e3785a6f469e07": {
+      "value": 0.56,
+      "unit": "fraction",
+      "rule_id": "P02",
+      "entity": "Technology",
+      "status": "FAIL",
+      "threshold": 0.45
+    },
+    "CHECK:618569cfc5763ac0": {
+      "value": 0.017631808880282037,
+      "unit": "fraction",
+      "rule_id": "P03",
+      "entity": "PORTFOLIO",
+      "status": "PASS",
+      "threshold": 0.025
+    },
+    "CHECK:acadca3ba5364467": {
+      "value": 4,
+      "unit": "level",
+      "rule_id": "O03",
+      "entity": "ORD-001",
+      "status": "PASS",
+      "threshold": 4
+    },
+    "CHECK:83839366af43146b": {
+      "value": 0.05,
+      "unit": "fraction",
+      "rule_id": "O04",
+      "entity": "ORD-001",
+      "status": "PASS",
+      "threshold": 0.1
+    },
+    "CHECK:5e4e7b2607192a20": {
+      "value": 200000.0,
+      "unit": "CNY",
+      "rule_id": "O05",
+      "entity": "ORD-001",
+      "status": "PASS",
+      "threshold": 500000.0
+    },
+    "CHECK:a6367fa0b9b5efda": {
+      "value": 0.22,
+      "unit": "fraction",
+      "rule_id": "O06",
+      "entity": "ORD-001",
+      "status": "PASS",
+      "threshold": 0.3
+    },
+    "CHECK:92588dfdc15c98bb": {
+      "value": 4,
+      "unit": "level",
+      "rule_id": "O03",
+      "entity": "ORD-002",
+      "status": "FAIL",
+      "threshold": 2
+    },
+    "CHECK:4eb5268ff6ce8e5f": {
+      "value": 0.13333333333333333,
+      "unit": "fraction",
+      "rule_id": "O04",
+      "entity": "ORD-002",
+      "status": "FAIL",
+      "threshold": 0.1
+    },
+    "CHECK:f6673091d7de5381": {
+      "value": 800000.0,
+      "unit": "CNY",
+      "rule_id": "O05",
+      "entity": "ORD-002",
+      "status": "FAIL",
+      "threshold": 500000.0
+    },
+    "CHECK:21883ab923667991": {
+      "value": 0.44,
+      "unit": "fraction",
+      "rule_id": "O06",
+      "entity": "ORD-002",
+      "status": "FAIL",
+      "threshold": 0.3
+    },
+    "CHECK:5d104b01576004e2": {
+      "value": 3,
+      "unit": "level",
+      "rule_id": "O03",
+      "entity": "ORD-003",
+      "status": "PASS",
+      "threshold": 4
+    },
+    "CHECK:33f4004facec6f37": {
+      "value": 0.005555555555555556,
+      "unit": "fraction",
+      "rule_id": "O04",
+      "entity": "ORD-003",
+      "status": "PASS",
+      "threshold": 0.1
+    },
+    "CHECK:9dc519a27ef17c75": {
+      "value": 100000.0,
+      "unit": "CNY",
+      "rule_id": "O05",
+      "entity": "ORD-003",
+      "status": "PASS",
+      "threshold": 1400000.0000000002
+    },
+    "CHECK:68d6a3dec45704e3": {
+      "value": 0.13000000000000003,
+      "unit": "fraction",
+      "rule_id": "O06",
+      "entity": "ORD-003",
+      "status": "PASS",
+      "threshold": 0.3
+    },
+    "CHECK:d54f756763ab5125": {
+      "value": 3,
+      "unit": "level",
+      "rule_id": "O03",
+      "entity": "ORD-004",
+      "status": "PASS",
+      "threshold": 4
+    },
+    "CHECK:e07145d96d5f7c16": {
+      "value": 0.01,
+      "unit": "fraction",
+      "rule_id": "O04",
+      "entity": "ORD-004",
+      "status": "PASS",
+      "threshold": 0.1
+    },
+    "CHECK:38dc5a58a41eea0f": {
+      "value": 100000.0,
+      "unit": "CNY",
+      "rule_id": "O05",
+      "entity": "ORD-004",
+      "status": "PASS",
+      "threshold": 500000.0
+    },
+    "CHECK:29e0f6a1a308b3df": {
+      "value": 0.08000000000000002,
+      "unit": "fraction",
+      "rule_id": "O06",
+      "entity": "ORD-004",
+      "status": "PASS",
+      "threshold": 0.3
+    },
+    "CHECK:d8a2f70d1fb17ff7": {
+      "value": 3,
+      "unit": "level",
+      "rule_id": "O03",
+      "entity": "ORD-005",
+      "status": "PASS",
+      "threshold": 4
+    },
+    "CHECK:9a30fba21ec9f8f2": {
+      "value": 0.09,
+      "unit": "fraction",
+      "rule_id": "O04",
+      "entity": "ORD-005",
+      "status": "PASS",
+      "threshold": 0.1
+    },
+    "CHECK:6bd420a1cbcc4b4c": {
+      "value": 900000.0,
+      "unit": "CNY",
+      "rule_id": "O05",
+      "entity": "ORD-005",
+      "status": "FAIL",
+      "threshold": 700000.0000000001
+    },
+    "CHECK:70ece2ad009da7de": {
+      "value": -0.01999999999999999,
+      "unit": "fraction",
+      "rule_id": "O06",
+      "entity": "ORD-005",
+      "status": "PASS",
+      "threshold": 0.3
+    }
+  },
+  "instructions": "仅从 facts 提取数值观察。每条返回 fact_id、value、comment；不得判断违法、推荐交易或宣称监管达标。comment 需要人工语义审阅。",
+  "response_schema": {
+    "observations": [
+      {
+        "fact_id": "METRIC:VAR_CNY",
+        "value": 176318.08880282036,
+        "comment": "人类审阅说明"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "order_id": "ORD-001",
+    "symbol": "SIM_TECH_B",
+    "side": "BUY",
+    "status": "BLOCK",
+    "failed_rules": [
+      "O01"
+    ],
+    "evidence_ids": [
+      "0a9a6b9fbf355f92"
+    ]
+  },
+  {
+    "order_id": "ORD-002",
+    "symbol": "SIM_TECH_A",
+    "side": "BUY",
+    "status": "BLOCK",
+    "failed_rules": [
+      "O02",
+      "O03",
+      "O04",
+      "O05",
+      "O06"
+    ],
+    "evidence_ids": [
+      "17a9e626223ec4f4",
+      "92588dfdc15c98bb",
+      "4eb5268ff6ce8e5f",
+      "f6673091d7de5381",
+      "21883ab923667991"
+    ]
+  },
+  {
+    "order_id": "ORD-003",
+    "symbol": "SIM_BANK",
+    "side": "SELL",
+    "status": "PASS_DEMO_CHECKS",
+    "failed_rules": [],
+    "evidence_ids": []
+  },
+  {
+    "order_id": "ORD-004",
+    "symbol": "SIM_GOLD",
+    "side": "BUY",
+    "status": "PASS_DEMO_CHECKS",
+    "failed_rules": [],
+    "evidence_ids": []
+  },
+  {
+    "order_id": "ORD-005",
+    "symbol": "SIM_GOLD",
+    "side": "SELL",
+    "status": "BLOCK",
+    "failed_rules": [
+      "O05"
+    ],
+    "evidence_ids": [
+      "6bd420a1cbcc4b4c"
+    ]
+  }
+]

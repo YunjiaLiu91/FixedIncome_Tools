@@ -1,0 +1,46 @@
+{
+  "data_note": "当前结果基于模拟数据，用于验证研究流程，不代表真实投资表现。",
+  "seed": 42,
+  "split_date": "2022-01-01",
+  "observations": 21600,
+  "stocks": 180,
+  "months": 120,
+  "full_sample_ic": {
+    "mean_ic": 0.06977317544094296,
+    "ic_std": 0.07620946110755272,
+    "icir_annualized": 3.1715402028253763,
+    "ic_t_stat": 10.029290731720579,
+    "ic_positive_rate": 0.7833333333333333,
+    "months": 120
+  },
+  "in_sample_ic": {
+    "mean_ic": 0.06958699571203043,
+    "ic_std": 0.0753280912572198,
+    "icir_annualized": 3.200086716859756,
+    "ic_t_stat": 7.838579588964668,
+    "ic_positive_rate": 0.7916666666666666,
+    "months": 72
+  },
+  "out_of_sample_ic": {
+    "mean_ic": 0.07005244503431175,
+    "ic_std": 0.07831400238772644,
+    "icir_annualized": 3.098664103339708,
+    "ic_t_stat": 6.197328206679416,
+    "ic_positive_rate": 0.7708333333333334,
+    "months": 48
+  },
+  "full_sample_performance": {
+    "annual_return": 0.1017324884494268,
+    "annual_vol": 0.02977732155587251,
+    "sharpe": 3.416441880393494,
+    "max_drawdown": -0.015695459357946473
+  },
+  "trading": {
+    "average_one_way_turnover": 0.1690009337068161,
+    "capacity_rmb": 32314422.24888307
+  },
+  "style_exposure": {
+    "mean_size_correlation": -1.1321463950467139e-17,
+    "mean_abs_industry_score": 1.342583317235023e-16
+  }
+}

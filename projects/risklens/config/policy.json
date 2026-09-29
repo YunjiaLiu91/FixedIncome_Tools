@@ -1,0 +1,20 @@
+{
+  "version": "demo-policy-2026-09-v1",
+  "scope": "Fictional internal policy for a single long-only CNY portfolio; not statutory limits",
+  "as_of": "2026-09-28",
+  "confidence": 0.975,
+  "lookback": 252,
+  "max_asset_weight": 0.30,
+  "max_sector_weight": 0.45,
+  "max_var_fraction": 0.025,
+  "max_liquidation_days": 5.0,
+  "adv_participation": 0.10,
+  "max_order_adv_fraction": 0.10,
+  "max_price_age_days": 3,
+  "restricted_symbols": ["SIM_TECH_B"],
+  "scenarios": {
+    "Equity selloff": {"equity_shock": -0.20, "yield_bp": 100, "gold_shock": 0.05},
+    "Rates +200bp": {"equity_shock": -0.05, "yield_bp": 200, "gold_shock": -0.03},
+    "Liquidity squeeze": {"equity_shock": -0.30, "yield_bp": 150, "gold_shock": -0.10}
+  }
+}
