@@ -1,0 +1,7 @@
+﻿instrument_id,name,asset_class,currency,issue_date,maturity_date,coupon_pct,frequency
+SIM_BOND_3,样例国债 A,bond,CNY,2024-09-28,2029-09-28,3.0,2
+SIM_BOND_10,样例国债 B,bond,CNY,2024-06-15,2034-06-15,2.7,2
+SIM_EQ_A,样例股票 A,equity,CNY,,,,
+SIM_EQ_B,样例股票 B,equity,CNY,,,,
+SIM_IF,样例股指期货,future,CNY,,2026-12-18,,
+SIM_T,样例国债期货,future,CNY,,2026-12-18,,

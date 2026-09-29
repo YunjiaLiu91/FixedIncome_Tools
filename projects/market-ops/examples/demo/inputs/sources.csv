@@ -1,0 +1,4 @@
+﻿entry_id,product,asset_class,observed_on,publication_date,observation,follow_up,url
+SRC01,LSEG Workspace,固收,2026-09-29,未标注,公开介绍包含固收数据、价格与收益率分析、利率衍生品数据及 API 工作流。,试用时核对字段单位、修订记录和导出权限。,https://www.lseg.com/en/data-analytics/products/workspace/fixed-income
+SRC02,Bloomberg Professional,多资产,2026-09-29,未标注,产品目录区分终端、数据、交易、风险和合规模块；数据目录包含时点数据与参考数据。,需要授权环境确认字段完整性；本项目未实测终端。,https://professional.bloomberg.com/products/
+SRC03,QuantLib,估值组件,2026-09-29,未标注,开源量化金融库提供 Python 绑定，可作为固定利率债券估值核对组件。,组件与商业终端功能层级不同，不做横向性能排名。,https://www.quantlib.org/

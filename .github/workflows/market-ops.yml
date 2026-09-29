@@ -1,0 +1,29 @@
+name: market operations checks
+on:
+  push:
+    paths: ['projects/market-ops/**', '.github/workflows/market-ops.yml']
+  pull_request:
+    paths: ['projects/market-ops/**', '.github/workflows/market-ops.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    defaults:
+      run:
+        working-directory: projects/market-ops
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - run: market-ops demo --output outputs/ci-demo
+      - uses: actions/upload-artifact@v4
+        with:
+          name: market-ops-demo-python-${{ matrix.python-version }}
+          path: projects/market-ops/outputs/ci-demo

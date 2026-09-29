@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "cutoff": "2026-09-28T18:00:00+08:00",
+    "business_date": "2026-09-28",
+    "vendor_priority": [
+      "feed_a",
+      "feed_b"
+    ],
+    "bond_gap_bp": 5.0,
+    "price_gap_pct": 1.0,
+    "source_review_date": "2026-09-29",
+    "sample_kind": "synthetic",
+    "policy_version": "ops-demo-1"
+  },
+  "raw_rows": 83,
+  "counts": {
+    "accepted": 69,
+    "rejected": 10,
+    "not_available": 2,
+    "superseded": 2
+  },
+  "findings": [
+    {
+      "instrument_id": "SIM_BOND_10",
+      "code": "SOURCE_GAP",
+      "detail": "feed_a / feed_b 差 19.00bp，阈值 5.0bp"
+    },
+    {
+      "instrument_id": "SIM_T",
+      "code": "STALE",
+      "detail": "最新日期 2026-09-25，未补值"
+    }
+  ],
+  "bonds": [
+    {
+      "instrument_id": "SIM_BOND_3",
+      "settlement_date": "2026-09-28",
+      "yield_decimal": 0.02055,
+      "clean_price": 102.73577656320363,
+      "accrued_interest": 0.0,
+      "dirty_price": 102.73577656320363,
+      "modified_duration": 2.8636442391580363,
+      "dv01_per_100": 0.029419872131285274,
+      "independent_dirty_price": 102.73577656320369,
+      "pv_difference": -5.684341886080802e-14,
+      "quantlib_version": "1.43"
+    },
+    {
+      "instrument_id": "SIM_BOND_10",
+      "settlement_date": "2026-09-28",
+      "yield_decimal": 0.0263,
+      "clean_price": 100.48364583439134,
+      "accrued_interest": 0.7745901639344188,
+      "dirty_price": 101.25823599832576,
+      "modified_duration": 6.873448421572853,
+      "dv01_per_100": 0.06959933393798678,
+      "independent_dirty_price": 101.2582359983258,
+      "pv_difference": -4.263256414560601e-14,
+      "quantlib_version": "1.43"
+    }
+  ],
+  "feedback_rows": 6,
+  "requirement_groups": 4,
+  "instrument_count": 6,
+  "latest_coverage": 5
+}

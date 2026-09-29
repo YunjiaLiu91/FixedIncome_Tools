@@ -1,11 +1,12 @@
 # FixedIncome_Tools
 
-金融风险与量化研究作品。当前包含两个可独立运行的 Python 项目，侧重计算口径、数据时点和结果可追溯。
+金融风险与量化研究作品。当前包含三个可独立运行的 Python 项目，侧重计算口径、数据时点和结果可追溯。
 
 | 项目 | 研究内容 | 阅读入口 |
 |---|---|---|
 | RiskLens | 投资组合 VaR / ES、滚动回测、压力测试与交易前政策检查 | [项目说明](projects/risklens/README.md) · [结果与反例](projects/risklens/docs/results.md) |
 | PIT Fundamental Alpha | 按财报公告日对齐的质量、价值、成长因子研究 | [项目说明](projects/pit-alpha/README.md) · [研究记录](projects/pit-alpha/docs/05_研究过程记录.md) |
+| 市场数据核对与运营简报 | 固收、股票和期货数据清洗；QuantLib 债券估值核对；资料与需求台账 | [项目说明](projects/market-ops/README.md) · [样例简报](projects/market-ops/examples/demo/brief.md) |
 
 ## RiskLens
 
@@ -19,9 +20,15 @@
 
 收益序列内置已知弱信号，只用于验证流程，不能推断真实投资收益。多空结果与 50% 多头、50% 空头持仓权重保持一致。
 
+## 市场数据核对与运营简报
+
+接收两路行情 CSV，保留原始记录，处理单位混用、修订冲突和截止后数据，标出同日来源差异与缺失。QuantLib 核对债券净价、全价及 DV01；公开产品资料保留原始链接，模拟用户反馈整理为需求台账。
+
+样例包含 83 行模拟行情、6 条虚构反馈和 21 项测试。阅读 [简报](projects/market-ops/examples/demo/brief.md) 或下载 [HTML 报告](projects/market-ops/examples/demo/report.html)。复现：进入 `projects/market-ops`，执行 `python -m pip install -e .`，再运行 `market-ops demo --output outputs/demo`。
+
 ## 运行
 
-两个项目分别安装，从对应目录执行：
+三个项目分别安装，从对应目录执行：
 
 ```bash
 cd projects/risklens
@@ -36,3 +43,4 @@ python -m pip install -e .
 fundamental-alpha demo --output outputs/demo
 python -m unittest discover -s tests -v
 ```
+

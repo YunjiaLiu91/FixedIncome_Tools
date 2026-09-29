@@ -1,0 +1,13 @@
+{
+  "cutoff": "2026-09-28T18:00:00+08:00",
+  "business_date": "2026-09-28",
+  "vendor_priority": [
+    "feed_a",
+    "feed_b"
+  ],
+  "bond_gap_bp": 5.0,
+  "price_gap_pct": 1.0,
+  "source_review_date": "2026-09-29",
+  "sample_kind": "synthetic",
+  "policy_version": "ops-demo-1"
+}

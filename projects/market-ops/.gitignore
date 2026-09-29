@@ -1,0 +1,7 @@
+.deps/
+.deps-unpacked/
+vendor-wheels/
+.venv/
+__pycache__/
+*.egg-info/
+outputs/

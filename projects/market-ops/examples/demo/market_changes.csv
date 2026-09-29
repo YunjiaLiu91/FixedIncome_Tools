@@ -1,0 +1,7 @@
+﻿instrument_id,name,vendor,start_date,end_date,change,unit,status
+SIM_BOND_3,样例国债 A,feed_a,2026-09-21,2026-09-28,-2.500000000000002,bp,current
+SIM_BOND_10,样例国债 B,feed_a,2026-09-21,2026-09-28,-6.999999999999992,bp,current
+SIM_EQ_A,样例股票 A,feed_a,2026-09-21,2026-09-28,2.857142857142847,%,current
+SIM_EQ_B,样例股票 B,feed_a,2026-09-21,2026-09-28,1.1111111111111072,%,current
+SIM_IF,样例股指期货,feed_a,2026-09-21,2026-09-28,1.5306122448979664,%,current
+SIM_T,样例国债期货,feed_a,2026-09-21,2026-09-25,0.09699321047527132,%,stale

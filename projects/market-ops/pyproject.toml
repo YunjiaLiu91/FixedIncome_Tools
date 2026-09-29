@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "market-ops-notebook"
+version = "0.1.0"
+description = "Market data checks, bond price reconciliation and an operations brief"
+requires-python = ">=3.10"
+dependencies = ["QuantLib==1.43"]
+
+[project.scripts]
+market-ops = "marketops.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

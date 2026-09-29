@@ -1,0 +1,23 @@
+{
+  "settings": {
+    "cutoff": "2026-09-28T18:00:00+08:00",
+    "business_date": "2026-09-28",
+    "vendor_priority": [
+      "feed_a",
+      "feed_b"
+    ],
+    "bond_gap_bp": 5.0,
+    "price_gap_pct": 1.0,
+    "source_review_date": "2026-09-29",
+    "sample_kind": "synthetic",
+    "policy_version": "ops-demo-1"
+  },
+  "quantlib_version": "1.43",
+  "input_sha256": {
+    "instruments.csv": "b1643cec5c23e9dd82712ff083f89b0cffa6c65cd0ea499c07e39c28a33708f4",
+    "quotes.csv": "f41c537effffc0f6865c272077c96cb1270ff995397dffdb1e05bce74c8a9c61",
+    "feedback.csv": "1949343659d52d1f678bafbc6017092e0311605bfdc815398b87f247ddb348b4",
+    "sources.csv": "8e6a55a56b31aea9003cab03f790888b4b1783fed9b851cae3acdca682a71f9d",
+    "settings.json": "585d3284016dbc7f59c41283433589690485edc85f2af6b3bd847a5053ff9178"
+  }
+}
