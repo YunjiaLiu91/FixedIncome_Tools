@@ -1,4 +1,6 @@
 from pathlib import Path
+import hashlib
+import json
 import tempfile
 import unittest
 
@@ -177,6 +179,11 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual(file.read_bytes(), (second / file.name).read_bytes(), file.name)
         self.assertEqual(a["latest_coverage"], 5)
         self.assertEqual(a["requirement_groups"], 4)
+        manifest = json.loads((first / "manifest.json").read_text(encoding="utf-8"))
+        for name, digest in manifest["input_sha256"].items():
+            source_bytes = (self.inputs / name).read_bytes()
+            self.assertNotIn(b"\r\n", source_bytes, name)
+            self.assertEqual(digest, hashlib.sha256(source_bytes).hexdigest(), name)
 
 
 if __name__ == "__main__":

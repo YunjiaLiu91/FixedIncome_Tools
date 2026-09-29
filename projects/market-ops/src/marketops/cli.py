@@ -73,13 +73,13 @@ def run(inputs, output):
     summary["requirement_groups"] = len(queue)
     summary["instrument_count"] = len(instruments)
     summary["latest_coverage"] = sum(q["age_days"] == 0 for q in snapshots)
-    (output / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (output / "brief.md").write_text(brief_text(result), encoding="utf-8")
-    (output / "report.html").write_text(html_report(result), encoding="utf-8")
+    (output / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    (output / "brief.md").write_text(brief_text(result), encoding="utf-8", newline="\n")
+    (output / "report.html").write_text(html_report(result), encoding="utf-8", newline="\n")
     manifest = dict(settings=settings, quantlib_version=ql.__version__,
                     input_sha256={name: hashlib.sha256((inputs / name).read_bytes()).hexdigest()
                                   for name in ("instruments.csv", "quotes.csv", "feedback.csv", "sources.csv", "settings.json")})
-    (output / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (output / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     return summary
 
 

@@ -10,7 +10,7 @@ def write_csv(path, rows, fields=None):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8-sig", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields if fields is not None else list(rows[0]) if rows else [])
+        writer = csv.DictWriter(stream, fieldnames=fields if fields is not None else list(rows[0]) if rows else [], lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -111,4 +111,4 @@ def write_sample(target):
     settings = dict(cutoff="2026-09-28T18:00:00+08:00", business_date="2026-09-28",
                     vendor_priority=["feed_a", "feed_b"], bond_gap_bp=5.0, price_gap_pct=1.0,
                     source_review_date="2026-09-29", sample_kind="synthetic", policy_version="ops-demo-1")
-    (target / "settings.json").write_text(json.dumps(settings, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (target / "settings.json").write_text(json.dumps(settings, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
