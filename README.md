@@ -36,7 +36,3 @@ python -m pip install -e .
 fundamental-alpha demo --output outputs/demo
 python -m unittest discover -s tests -v
 ```
-
-HTML 报告没有外部脚本依赖。下载 [RiskLens 报告](projects/risklens/examples/demo/report.html)或[因子研究报告](projects/pit-alpha/outputs/demo/report.html)后可直接用浏览器打开。
-
-每个目录保存方法、输入要求、局限和 AI 协作记录。两项作品合计 29 项本地测试通过；线上验证由 GitHub Actions 运行。后续优先接入真实数据核对和补齐业务约束。
